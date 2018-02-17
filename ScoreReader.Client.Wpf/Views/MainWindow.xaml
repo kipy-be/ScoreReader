@@ -4,9 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ScoreReader.Client.Wpf"
+        xmlns:controls="clr-namespace:ScoreReader.Client.Wpf.Controls"
+        xmlns:views="clr-namespace:ScoreReader.Client.Wpf.Views"
         mc:Ignorable="d"
         Title="ScoreReader" Width="1280" Height="800"
-        WindowState="Maximized">
+        WindowState="Maximized"
+        Loaded="WindowLoaded"
+        Unloaded="WindowUnloaded">
 
     <Window.DataContext>
         <Binding Path="MainViewModel" Mode="OneWay" Source="{StaticResource AppContext}" />
@@ -14,8 +18,8 @@
 
     <Window.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="0,5">
-            <GradientStop Color="#FFFFFFFF" Offset="0" />
-            <GradientStop Color="#FFEEEEEE" Offset="0.5" />
+            <GradientStop Color="#FFEEEEEE" Offset="0" />
+            <GradientStop Color="#FFCCCCCC" Offset="0.5" />
         </LinearGradientBrush>
     </Window.Background>
 
@@ -23,5 +27,17 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <views:HeaderBarView
+            Grid.Row="0" Grid.Column="0" />
+
+        <controls:PdfViewer
+            Grid.Row="1" Grid.Column="0"
+            x:Name="pdfViewer" />
     </Grid>
 </Window>

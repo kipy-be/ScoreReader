@@ -75,17 +75,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Controls\PDFViewer\PdfViewer.xaml.cs">
+    <Compile Include="Controls\PdfViewer.xaml.cs">
       <DependentUpon>PdfViewer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\PDFViewer\WinFormPdfHost.cs">
+    <Compile Include="Controls\WinFormsPdfViewer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\PDFViewer\WinFormPdfHost.designer.cs">
-      <DependentUpon>WinFormPdfHost.cs</DependentUpon>
+    <Compile Include="Controls\WinFormsPdfViewer.Designer.cs">
+      <DependentUpon>WinFormsPdfViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewsModels\BaseViewModel.cs" />
     <Compile Include="ViewsModels\MainViewModel.cs" />
+    <Compile Include="Views\HeaderBarView.xaml.cs">
+      <DependentUpon>HeaderBarView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
@@ -102,9 +105,13 @@
     <Compile Include="Common\Converters\NumericToVisibilityConverter.cs" />
     <Compile Include="Common\Interfaces.cs" />
     <Compile Include="Common\RelayCommand.cs" />
-    <Page Include="Controls\PDFViewer\PdfViewer.xaml">
+    <Page Include="Controls\PdfViewer.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\HeaderBarView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -125,8 +132,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Controls\PDFViewer\WinFormPdfHost.resx">
-      <DependentUpon>WinFormPdfHost.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\WinFormsPdfViewer.resx">
+      <DependentUpon>WinFormsPdfViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -180,6 +187,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\icon_busy_16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,17 @@
+﻿<Application x:Class="ScoreReader.Client.Wpf.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ScoreReader.Client.Wpf"
+             xmlns:conv="clr-namespace:ScoreReader.Client.Wpf.Common.Converters"
+             StartupUri="Views/MainWindow.xaml">
+    <Application.Resources>
+        <local:ApplicationContext x:Key="AppContext" />
+
+        <conv:BooleanToInverseBooleanConverter x:Key="BooleanToInverseBooleanConverter" />
+        <conv:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        <conv:BooleanToInverseVisibilityConverter x:Key="BooleanToInverseVisibilityConverter" />
+        <conv:BooleanToOpacityConverter x:Key="BooleanToOpacityConverter" />
+        <conv:NullToVisibilityConverter x:Key="NullToVisibilityConverter" />
+        <conv:NumericToVisibilityConverter x:Key="NumericToVisibilityConverter" />
+    </Application.Resources>
+</Application>
